@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Teste Smarkio</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="leftContainer">
+        <form id="formComment">
+          <h5>Comentário</h5>
+          <textarea type="textarea" id="textComment"></textarea>
+          <input type="submit" value="Cadastrar" id="submitButton" onclick="sendComment()">
+        </form>
+      </div>
+      <div class="linha-vertical"></div>
+      <div class="rightContainer">
+        <h5>Comentários</h5>
+        <ul class="listComments">
+          
+        </ul>
+      </div>
+
+    </div>
+    <audio autoplay type="audio/wav" id="audio"></audio>
+  </body>
+  <script src="../js/index.js"></script>
+  
+</html>

@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  comments-mysql:
+    image: mysql
+    container_name: comments-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootroot
+      - MYSQL_HOST=localhost
+      - MYSQL_DATABASE=comments
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=rootroot
+    ports:
+      - "3306:3306"
+    networks:
+      - comments-network
+
+  comments-main:
+    container_name: comments-main
+    build:
+      context: .
+      dockerfile: comments.dockerfile
+    image: comments/app
+    restart: on-failure
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    networks:
+      - comments-network
+    depends_on:
+      - comments-mysql
+networks:
+  comments-network:
+    driver: bridge

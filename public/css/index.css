@@ -1,0 +1,91 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+html, body{
+    min-height: 100vh;
+    max-height: 100%;
+    width: 100%;
+    background-color:#D3D3D3;
+}
+
+.main{
+    min-height: 100vh;
+    max-height: 100%;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+    background-color: #f5f5f5;
+}
+.main .linha-vertical {
+    min-height: 100vh;
+    max-height: 100%;
+    border-left: 2px solid #a9a9a9 ;
+}
+
+.main .leftContainer{
+    height: 100vh;
+    width: 40%;
+}
+
+.main .leftContainer form{
+    height: 100vh;
+    width: 100%;
+}
+
+.main .leftContainer form textarea#textComment{
+    height: 150px;
+    width: 100%;
+    margin: 2% 0%;
+    resize: none;
+}
+
+.main .leftContainer form input#submitButton{
+    width: 100%;
+    height: 30px;
+    margin: 2% 0%;
+    background-color:  #dadada;
+    border-radius: 3px;
+    border: 1px solid grey;
+}
+
+
+.main .rightContainer{
+    min-height: 100vh;
+    max-height: 100%;
+    width: 40%;
+}
+
+.main .rightContainer ul {
+    min-height: 100vh;
+    max-height: 100%;
+    width: 100%;
+    margin: 2% 0%;
+}
+
+.main .rightContainer ul li{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 20px 0%;
+}
+
+.main .rightContainer ul li p{
+    width: 70%;
+    word-break: break-all;
+    color:gray;
+    font-size: 14px;
+}
+
+.main .rightContainer ul li button{
+    margin:auto;
+    height: 25px;
+    width: 20%;
+    background-color:  #dadada;
+    border-radius: 3px;
+    border: 1px solid grey;
+}
