@@ -11,4 +11,3 @@ $ npm install
 ```bash
 $ docker-compose up
 ```
-dfgdfgdfgd
