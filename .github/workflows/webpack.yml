@@ -1,8 +1,13 @@
 name: NodeJS with Webpack
 
 on:
+
   push:
     branches: [ master ]
+    inputs:
+      service:
+        description: 'Number of Octocats'
+        required: true    
   pull_request:
     branches: [ master ]
 
