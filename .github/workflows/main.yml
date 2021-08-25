@@ -1,26 +1,18 @@
-name: Deploy
-on:
-  push:
-    inputs:
-      ambiente:
-        description: 'prod || dev'     
-        required: true
-      service:
-        description: 'portoReff || portoAluguel || portoCpCp'     
-        required: true
-jobs:
-  # Label of the container job
-  container-job:
-    # Containers must run in Linux based operating systems
-    runs-on: ubuntu-latest
-    # Docker Hub image that `container-job` executes in
-    container: node:12.14-alpine
-    # Service containers to run with `container-job`       
-    steps:
-     - name: Checkout
-       uses: actions/checkout@v2
-     - name: Install dependencies
-       run: npm install
-     - name: Run deploy
-       run:  node ${{ github.event.inputs.service }}.js
+name: NodeJS with Webpack
 
+on: 
+  pull_request:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'  
+jobs:
+  printInputs:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "Log level: ${{ github.event.inputs.logLevel }}"
+        echo "Tags: ${{ github.event.inputs.tags }}"
