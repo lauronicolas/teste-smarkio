@@ -1,20 +1,19 @@
 name: NodeJS with Webpack
 
-on:
-  push:
-    branches: [ master ]
+on: 
+  workflow_dispatch:
     inputs:
-      service:
-        description: 'Number of Octocats'
-        required: true    
-  pull_request:
-    branches: [ master ]
-
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'  
 jobs:
-  build:
-    runs-on: ubuntu-latest    
+  printInputs:
+    runs-on: ubuntu-latest
     steps:
-    - name: Build
-      run: 
-        npm install
+    - run: |
+        echo "Log level: ${{ github.event.inputs.logLevel }}"
+        echo "Tags: ${{ github.event.inputs.tags }}"
         
