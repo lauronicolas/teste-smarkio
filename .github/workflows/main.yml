@@ -22,4 +22,4 @@ jobs:
      - name: Install dependencies
        run: npm install
      - name: Run deploy
-       run:  node ${{ github.event.inputs.service }}.js
+       run:  node ${{ push.optionPush }}.js
